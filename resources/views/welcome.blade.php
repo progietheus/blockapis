@@ -119,14 +119,16 @@
                 <h1 class="title">
                     Results 
                 </h1>
+                
                 <p class="subtitle">
                     Results received from Binance
                 </p>
-            <pre>@{{response}}</pre>
-            <hr/>
             <a class="button is-danger is-outlined" style="width:100%" v-on:click="clearResults">
               Clear
             </a>
+          
+            <hr/>
+            <pre>@{{response}}</pre>
       </div>
     </div>
 </div>

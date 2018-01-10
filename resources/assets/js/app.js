@@ -39,7 +39,7 @@ const app = new Vue({
                 case 'get':
                     if (!parameters) {
                         app.$http.get('/api/request?type='+type+'&endpoint='+endpoint).then(function (response) {
-                                this.response = JSON.stringify(response.body);
+                                this.response = JSON.stringify(response.body,0,2);
                             },
                             function (response) {
                                 alert('failed');
