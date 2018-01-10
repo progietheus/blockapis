@@ -1,0 +1,31 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+
+.endpoints-text {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.enpoint:hover pre {
+    border: 1px solid rgb(62, 206, 248);
+}
+.enpoint:hover .execute-btn{
+    display:inline !important;
+    opacity: 1;
+}
+.execute-btn {
+    position: relative !important;
+    left: 536px;
+    bottom: 43px;
+    display:inline !important;
+    opacity: 0;
+}
