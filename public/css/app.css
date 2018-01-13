@@ -7721,6 +7721,20 @@ button.close {
   }
 }
 
+.is-info {
+  color: #3ecef8 !important;
+  border: 1px solid #3ecef8 !important;
+}
+
+.button:hover {
+  text-decoration: none !important;
+}
+
+.is-info:hover {
+  background-color: #3ecef8 !important;
+  color: white !important;
+}
+
 .endpoints-text {
   max-height: 500px;
   overflow-y: auto;
@@ -7733,7 +7747,6 @@ button.close {
 
 .enpoint:hover .execute-btn {
   display: inline !important;
-  opacity: 1;
 }
 
 .execute-btn {
@@ -7741,5 +7754,9 @@ button.close {
   left: 536px;
   bottom: 43px;
   display: inline !important;
-  opacity: 0;
+}
+
+.github {
+  font-size: 24px;
+  color: black;
 }

@@ -21,10 +21,10 @@
           <div class="hero-body">
             <div class="container">
               <h1 class="is-size-1">
-               Blocktrader
+               <i class="fa fa-chain-broken" aria-hidden="true"></i> BlockApis
               </h1>
               <h2 class="subtitle">
-               By Googlɘ
+              A simple utility to test common Cryptocurrency exchange API's
               </h2>
             </div>
           </div>
@@ -36,7 +36,7 @@
         <div class="container">
             <div class="content has-text-centered">
                 <p>
-                    {{date('Y')}} <i class="fa fa-tint" aria-hidden="true"></i> <strong>Blocktrader</strong></a>.
+                    {{date('Y')}} <i class="fa fa-tint" aria-hidden="true"></i> <strong>Blocktrader</strong>.
                 </p>
             </div>
         </div>

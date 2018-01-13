@@ -7,6 +7,7 @@
 require('bulma');
 window.Vue = require('vue');
 require('vue-resource');
+require("font-awesome-webpack");
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -14,35 +15,30 @@ require('vue-resource');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-const app = new Vue({
-    el: '#app',
-    mounted: function () {
-        this.init();
-    },
-    data: {
-        endpoint: '',
-        response: "{}",
-        apiKey: '',
-        secretKey: ''
-    },
+Vue.mixin({
     methods: {
-        init: function () {
+        compile: function (content, element) {
+            var tmp = Vue.extend({
+                template: content
+            });
+            new tmp().$mount(element);
         },
-        clearResults: function () {
-            this.response = "{}";
+        stopLoading: function(){            
+            document.getElementsByClassName('is-loading')[0].classList.remove('is-loading');
         },
-        initRequest: function (type, endpoint, parameters) {
+        initRequest: function (e,type, endpoint, parameters) {
+            e.currentTarget.classList.add('is-loading');
             parameters = parameters || 0;
-
             switch (type) {
                 case 'get':
                     if (!parameters) {
-                        app.$http.get('/api/request?type='+type+'&endpoint='+endpoint).then(function (response) {
-                                this.response = JSON.stringify(response.body,0,2);
+                        app.$http.get('/api/request?type=' + type + '&endpoint=' + endpoint).then(function (response) {
+                                this.response = JSON.stringify(response.body, 0, 2);
+                                this.stopLoading()
                             },
                             function (response) {
                                 alert('failed');
+                                this.stopLoading()
                                 this.response = response;
                             });
                     } else {
@@ -68,5 +64,42 @@ const app = new Vue({
                 default:
             }
         }
+    }
+});
+
+var app = new Vue({
+    el: '#app',
+    mounted: function () {
+        this.appendExecuteBtn();
+
+    },
+    data: {
+        endpoint: '',
+        response: "No Results",
+        apiKey: '',
+        secretKey: ''
+    },
+    methods: {
+        appendExecuteBtn: function () {
+            var endpoints = document.getElementsByClassName('enpoint');
+            for (let i = 0; i < endpoints.length; i++) {
+                var item = endpoints.item(i);
+                var endpoint = item.dataset.endpoint;
+                var button = document.createElement('a');
+                button.classList.add("button", "execute-btn","is-info","is-outlined");
+                button.innerHTML = "Execute";
+                button.setAttribute("v-on:click", "initRequest($event,'get','" + endpoint + "')");
+                button.id = endpoint;
+                item.append(button);
+                var appendedButton = item.getElementsByClassName('execute-btn')[0];
+                this.compile(button.outerHTML, appendedButton);
+            }
+        },
+        replay: function () {
+            //s
+        },
+        clearResults: function () {
+            this.response = "Nothing yet!";
+        },
     }
 });

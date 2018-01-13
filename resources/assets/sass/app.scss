@@ -8,7 +8,18 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+.is-info {
+    color: rgb(62, 206, 248) !important;
+    border: 1px solid rgb(62, 206, 248)  !important;;
+}
+.button:hover {
+    text-decoration: none !important;
+}
 
+.is-info:hover {
+    background-color: rgb(62, 206, 248)  !important;;
+    color: white !important;
+}
 
 .endpoints-text {
   max-height: 500px;
@@ -20,12 +31,17 @@
 }
 .enpoint:hover .execute-btn{
     display:inline !important;
-    opacity: 1;
+//    opacity: 1;
 }
 .execute-btn {
     position: relative !important;
     left: 536px;
     bottom: 43px;
     display:inline !important;
-    opacity: 0;
+//    opacity: 0;
+}
+
+.github {
+    font-size: 24px;
+    color: black;
 }
