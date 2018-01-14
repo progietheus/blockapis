@@ -7736,7 +7736,6 @@ button.close {
 }
 
 .endpoints-text {
-  max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
 }
