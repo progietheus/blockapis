@@ -37,6 +37,13 @@
 <div class="container">
     <div class="columns">
       <div id="endpoint-list" class="column is-half endpoints-text" >
+                <h1 class="title">
+                    Endpoints 
+                </h1>
+                
+                <p class="subtitle">
+                    All endpoints provided by Binance API
+                </p>
           
                 <span class="is-size-3"> General endpoints</span> 
                 <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/ping">
@@ -95,7 +102,7 @@
                     Result 
                 </h1>
                 
-                <p class="subtitle">
+                <p class="subtitle results">
                     Results received from Binance
                 </p>
             <a class="button is-danger is-outlined" v-on:click="clearResults">

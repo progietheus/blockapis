@@ -4,7 +4,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('bulma');
 window.Vue = require('vue');
 require('vue-resource');
 require("font-awesome-webpack");

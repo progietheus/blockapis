@@ -11,8 +11,11 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/assets/sass/app.scss', 'public/css')
+mix.sass('resources/assets/sass/mystyle.scss', 'public/css')
+    .sass('resources/assets/sass/app.scss', 'public/css')
     .js('resources/assets/js/app.js', 'public/js')
+    .js('resources/assets/js/rAF.js', 'public/js')
+    .js('resources/assets/js/h.js', 'public/js')
     .extract(['vue'])
     .options({
         processCssUrls: false

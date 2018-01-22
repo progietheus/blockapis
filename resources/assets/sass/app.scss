@@ -8,6 +8,8 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+
+
 .is-info {
     color: rgb(62, 206, 248) !important;
     border: 1px solid rgb(62, 206, 248)  !important;;
@@ -15,7 +17,6 @@
 .button:hover {
     text-decoration: none !important;
 }
-
 .is-info:hover {
     background-color: rgb(62, 206, 248)  !important;;
     color: white !important;
@@ -43,4 +44,41 @@
 .github {
     font-size: 24px;
     color: black;
+} 
+.is-half pre {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.results {
+    margin-bottom: 42px !important;
+}
+
+#title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    top: 32%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -439%, 0);
+    transform: translate3d(-50%, -439%, 0);
+}
+#subtitle {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    top: 32%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -690%, 0);
+    transform: translate3d(-50%, -690%, 0);
+}
+.hero.is-primary {
+    background: #355C7D;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
