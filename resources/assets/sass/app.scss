@@ -60,10 +60,10 @@
     padding: 0;
     color: #f9f1e9;
     text-align: center;
-    top: 32%;
+    top: 8%;
     left: 50%;
-    -webkit-transform: translate3d(-50%, -439%, 0);
-    transform: translate3d(-50%, -439%, 0);
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
 }
 #subtitle {
     position: absolute;
@@ -71,10 +71,10 @@
     padding: 0;
     color: #f9f1e9;
     text-align: center;
-    top: 32%;
+    top: 12%;
     left: 50%;
-    -webkit-transform: translate3d(-50%, -690%, 0);
-    transform: translate3d(-50%, -690%, 0);
+    -webkit-transform: translate3d(-50%, 15%, 0);
+    transform: translate3d(-50%, 15%, 0);
 }
 .hero.is-primary {
     background: #355C7D;  /* fallback for old browsers */

@@ -11,22 +11,23 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mystyle.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{{ asset('img/favicon.ico') }}}"> 
+    <link rel="shortcut icon" href="{{{ asset('favicon.ico') }}}"> 
     @yield('styles')
 </head>
 
 <body>
-    <div id="app">
-        <section id="header-container"  class="hero is-primary">
-        <canvas id="canvas"></canvas>
-          <div class="hero-body">
-            <div class="container">
-              <h1 id="title" class="is-size-1">
+    <div id="app">             <h1 id="title" class="is-size-1">
                <i class="fa fa-chain-broken" aria-hidden="true"></i> BlockApis
               </h1>
               <h2 id="subtitle" class="subtitle">
               A simple utility to test common Cryptocurrency exchange API's
               </h2>
+        <section id="header-container"  class="hero is-primary">
+        <canvas id="canvas"></canvas>
+          
+          <div class="hero-body">
+            <div class="container">
+
             </div>
             <canvas id="canvas"></canvas>
           </div>
