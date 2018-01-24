@@ -16,12 +16,13 @@
 </head>
 
 <body>
-    <div id="app">             <h1 id="title" class="is-size-1">
-               <i class="fa fa-chain-broken" aria-hidden="true"></i> BlockApis
-              </h1>
-              <h2 id="subtitle" class="subtitle">
-              A simple utility to test common Cryptocurrency exchange API's
-              </h2>
+    <div id="app">             
+      <h1 id="title" class="is-size-1 is-size-3-mobile" >
+       <i class="fa fa-chain-broken" aria-hidden="true"></i> BlockApis
+      </h1>
+      <h2 id="subtitle" class="subtitle is-hidden-mobile">
+      A simple utility to test exchange API's. 
+      </h2>
         <section id="header-container"  class="hero is-primary">
         <canvas id="canvas"></canvas>
           

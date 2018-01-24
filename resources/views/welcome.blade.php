@@ -46,15 +46,15 @@
                 </p>
           
                 <span class="is-size-3"> General endpoints</span> 
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/ping">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/ping" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Test connectivity</span> <pre>GET /api/v1/ping</pre>
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/time">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/time" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Check Server Time</span> <pre>GET /api/v1/time</pre>
             
 
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/exchangeInfo">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/exchangeInfo" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Exchange Information</span> <pre>GET /api/v1/exchangeInfo</pre>
                   
 
@@ -63,39 +63,38 @@
                 <hr>
                 <span class="is-size-3"> Market Data endpoints</span>
             
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/depth">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/depth" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Order book</span> <pre>GET /api/v1/depth</pre>
                 
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/trades">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/trades" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Recent trades list</span> <pre>GET /api/v1/trades</pre>
                  
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/historicalTrades">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/historicalTrades" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold"> Old trade lookup</span> <pre>GET /api/v1/historicalTrades</pre>
                   
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/aggTrades">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/aggTrades" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Compressed/Aggregate trades list</span> <pre>GET /api/v1/aggTrades</pre>
                 
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/klines">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/klines" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Kline/Candlestick data</span> <pre>GET /api/v1/klines</pre>
                    
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/ticker/24hr">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v1/ticker/24hr" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">24-hr ticker price change statistics</span> <pre>GET /api/v1/ticker/24hr</pre>
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v3/ticker/price">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v3/ticker/price" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Symbol price ticker</span> <pre>GET /api/v3/ticker/price</pre>
                    
                 </div>
-                <div class="enpoint" data-endpoint="https://api.binance.com/api/v3/ticker/bookTicker">
+                <div class="enpoint" data-endpoint="https://api.binance.com/api/v3/ticker/bookTicker" data-exchange="binance">
                     <span class="is-size-5 has-text-weight-bold">Symbol order book ticker</span> <pre>GET /api/v3/ticker/bookTicker </pre>
                   
                 </div>
                 
-                <hr>
       </div>
       <div class="column is-half">
                 <h1 class="title">

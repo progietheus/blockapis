@@ -1,1 +1,113 @@
-webpackJsonp([3],{28:function(n,t,e){n.exports=e(29)},29:function(n,t){!function(){var n,t,e,i,o,a,r=!0;function d(){r=!(document.body.scrollTop>t)}function h(){n=window.innerWidth,t=window.innerHeight/4,e.style.height=t+"px",i.width=n,i.height=t}function c(){if(r){o.clearRect(0,0,n,t);for(var e in a)a[e].draw()}requestAnimationFrame(c)}function l(){var e=this;function i(){e.pos.x=Math.random()*n,e.pos.y=t+100*Math.random(),e.alpha=.1+.3*Math.random(),e.scale=.1+.3*Math.random(),e.velocity=Math.random()}e.pos={},i(),this.draw=function(){e.alpha<=0&&i(),e.pos.y-=e.velocity,e.alpha-=5e-4,o.beginPath(),o.arc(e.pos.x,e.pos.y,10*e.scale,0,2*Math.PI,!1),o.fillStyle="rgba(255,255,255,"+e.alpha+")",o.fill()}}!function(){n=window.innerWidth,t=window.innerHeight/4,{x:0,y:t},(e=document.getElementById("header-container")).style.height=t+"px",(i=document.getElementById("canvas")).width=n,i.height=t,o=i.getContext("2d"),a=[];for(var r=0;r<.5*n;r++){var d=new l;a.push(d)}c()}(),window.addEventListener("scroll",d),window.addEventListener("resize",h)}()}},[28]);
+webpackJsonp([3],{
+
+/***/ 28:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(29);
+
+
+/***/ }),
+
+/***/ 29:
+/***/ (function(module, exports) {
+
+(function () {
+
+    var width,
+        height,
+        largeHeader,
+        canvas,
+        ctx,
+        circles,
+        target,
+        animateHeader = true;
+
+    // Main
+    initHeader();
+    addListeners();
+
+    function initHeader() {
+        width = window.innerWidth;
+        height = window.innerHeight / 4;
+        target = { x: 0, y: height };
+
+        largeHeader = document.getElementById('header-container');
+        largeHeader.style.height = height + 'px';
+
+        canvas = document.getElementById('canvas');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
+
+        // create particles
+        circles = [];
+        for (var x = 0; x < width * 0.5; x++) {
+            var c = new Circle();
+            circles.push(c);
+        }
+        animate();
+    }
+
+    // Event handling
+    function addListeners() {
+        window.addEventListener('scroll', scrollCheck);
+        window.addEventListener('resize', resize);
+    }
+
+    function scrollCheck() {
+        if (document.body.scrollTop > height) animateHeader = false;else animateHeader = true;
+    }
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight / 4;;
+        largeHeader.style.height = height + 'px';
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    function animate() {
+        if (animateHeader) {
+            ctx.clearRect(0, 0, width, height);
+            for (var i in circles) {
+                circles[i].draw();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    // Canvas manipulation
+    function Circle() {
+        var _this = this;
+
+        // constructor
+        (function () {
+            _this.pos = {};
+            init();
+        })();
+
+        function init() {
+            _this.pos.x = Math.random() * width;
+            _this.pos.y = height + Math.random() * 100;
+            _this.alpha = 0.1 + Math.random() * 0.3;
+            _this.scale = 0.1 + Math.random() * 0.3;
+            _this.velocity = Math.random();
+        }
+
+        this.draw = function () {
+            if (_this.alpha <= 0) {
+                init();
+            }
+            _this.pos.y -= _this.velocity;
+            _this.alpha -= 0.0005;
+            ctx.beginPath();
+            ctx.arc(_this.pos.x, _this.pos.y, _this.scale * 10, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(255,255,255,' + _this.alpha + ')';
+            ctx.fill();
+        };
+    }
+})();
+
+/***/ })
+
+},[28]);

@@ -22,35 +22,22 @@ Vue.mixin({
             });
             new tmp().$mount(element);
         },
-        stopLoading: function(){            
+        stopLoading: function () {
             document.getElementsByClassName('is-loading')[0].classList.remove('is-loading');
         },
-        initRequest: function (e,type, endpoint, parameters) {
+        initRequest: function (e, type, endpoint, exchange) {
             e.currentTarget.classList.add('is-loading');
-            parameters = parameters || 0;
             switch (type) {
                 case 'get':
-                    if (!parameters) {
-                        app.$http.get('/api/request?type=' + type + '&endpoint=' + endpoint).then(function (response) {
-                                this.response = JSON.stringify(response.body, 0, 2);
-                                this.stopLoading()
-                            },
-                            function (response) {
-                                alert('failed');
-                                this.stopLoading()
-                                this.response = response;
-                            });
-                    } else {
-                        this.$http.get(endpoint, {
-                            params: parameters
-                        }).then(function (response) {
-                                this.response = response;
-                            },
-                            function (response) {
-                                alert('failed');
-                                this.response = response;
-                            });
-                    }
+                    app.$http.get('/api/request?type=' + type + '&endpoint=' + endpoint + '&exchange=' + exchange).then(function (response) {
+                            this.response = JSON.stringify(response.body, 0, 2);
+                            this.stopLoading()
+                        },
+                        function (response) {
+                            alert('failed');
+                            this.stopLoading()
+                            this.response = response;
+                        });
                     break;
                 case 'post':
                     break;
@@ -84,10 +71,11 @@ var app = new Vue({
             for (let i = 0; i < endpoints.length; i++) {
                 var item = endpoints.item(i);
                 var endpoint = item.dataset.endpoint;
+                var exchange = item.dataset.exchange;
                 var button = document.createElement('a');
-                button.classList.add("button", "execute-btn","is-info","is-outlined");
+                button.classList.add("button", "execute-btn", "is-info", "is-outlined");
                 button.innerHTML = "Execute";
-                button.setAttribute("v-on:click", "initRequest($event,'get','" + endpoint + "')");
+                button.setAttribute("v-on:click", "initRequest($event,'get','" + endpoint + "','" + exchange + "')");
                 button.id = endpoint;
                 item.append(button);
                 var appendedButton = item.getElementsByClassName('execute-btn')[0];
