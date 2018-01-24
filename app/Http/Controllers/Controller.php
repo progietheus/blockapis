@@ -39,7 +39,7 @@ class Controller extends BaseController
         $status =  $res->getStatusCode();
         
 //      Binance = 429 
-        if ($status = 429) {            
+        if ($status == 429) {            
             $limit = new Limit;
             $limit->exchange = $exchange;
             $limit->visitor = $ip;
